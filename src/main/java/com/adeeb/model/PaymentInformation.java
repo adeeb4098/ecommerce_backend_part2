@@ -1,7 +1,9 @@
 package com.adeeb.model;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 
+@Entity
 public class PaymentInformation {
 
     @Column(name = "card_holder_name")
