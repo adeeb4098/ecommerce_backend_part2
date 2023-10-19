@@ -1,13 +1,23 @@
 package com.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class PaymentInformation {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "user_payment_information",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "payment_information_id")
+    )
     @Column(name = "card_holder_name")
-    private String cardHolderName;
+    private List<String> cardHolderName = new ArrayList<>();
 
     @Column(name = "card_number")
     private String cardNumber;
@@ -22,7 +32,7 @@ public class PaymentInformation {
         // Default no-argument constructor
     }
 
-    public PaymentInformation(String cardHolderName, String cardNumber, String expirationDate, String cvv) {
+    public PaymentInformation(List<String> cardHolderName, String cardNumber, String expirationDate, String cvv) {
         super();
         this.cardHolderName = cardHolderName;
         this.cardNumber = cardNumber;
@@ -30,11 +40,11 @@ public class PaymentInformation {
         this.cvv = cvv;
     }
 
-    public String getCardHolderName() {
+    public List<String> getCardHolderName() {
         return cardHolderName;
     }
 
-    public void setCardHolderName(String cardHolderName) {
+    public void setCardHolderName(List<String> cardHolderName) {
         this.cardHolderName = cardHolderName;
     }
 

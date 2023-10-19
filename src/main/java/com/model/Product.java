@@ -10,8 +10,8 @@ import java.util.Set;
 
 @Entity
 public class Product {
-
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String title;
