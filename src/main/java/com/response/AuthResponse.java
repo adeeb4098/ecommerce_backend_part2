@@ -1,4 +1,4 @@
-package com.adeeb.response;
+package com.response;
 
 public class AuthResponse {
 

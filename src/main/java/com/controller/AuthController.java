@@ -1,12 +1,12 @@
-package com.adeeb.controller;
+package com.controller;
 
-import com.adeeb.Exception.UserException;
-import com.adeeb.config.JwtProvider;
-import com.adeeb.model.User;
-import com.adeeb.repository.UserRepository;
-import com.adeeb.request.LoginRequest;
-import com.adeeb.response.AuthResponse;
-import com.adeeb.service.CustomUserServiceImplementation;
+import com.Exception.UserException;
+import com.config.JwtProvider;
+import com.model.User;
+import com.repository.UserRepository;
+import com.request.LoginRequest;
+import com.response.AuthResponse;
+import com.service.CustomUserServiceImplementation;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.BadCredentialsException;

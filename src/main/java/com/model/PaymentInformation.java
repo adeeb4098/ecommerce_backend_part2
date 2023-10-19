@@ -1,4 +1,4 @@
-package com.adeeb.model;
+package com.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

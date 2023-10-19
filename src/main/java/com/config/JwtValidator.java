@@ -1,4 +1,4 @@
-package com.adeeb.config;
+package com.config;
 
 
 import io.jsonwebtoken.Claims;

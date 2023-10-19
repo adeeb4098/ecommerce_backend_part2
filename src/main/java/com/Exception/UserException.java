@@ -1,4 +1,4 @@
-package com.adeeb.Exception;
+package com.Exception;
 
 public class UserException extends Exception {
 

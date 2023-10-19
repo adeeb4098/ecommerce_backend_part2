@@ -1,4 +1,4 @@
-package com.adeeb.request;
+package com.request;
 
 public class LoginRequest {
 

@@ -1,38 +1,36 @@
-package com.adeeb.model;
+package com.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-public class Rating {
+public class Review {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
-    private User user;
+    private String review;
 
-    @JsonIgnore
     @ManyToOne
-    @JoinColumn(name = "product_id", nullable = false)
+    @JoinColumn(name = "product_id")
     private Product product;
 
-    @Column(name = "rating")
-    private double rating;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
     private LocalDateTime createdAt;
 
-    public Rating() {
+    public Review() {
         // Default no-argument constructor
     }
 
-    public Rating(User user, Product product, double rating, LocalDateTime createdAt) {
+    public Review(String review, Product product, User user, LocalDateTime createdAt) {
         super();
-        this.user = user;
+        this.review = review;
         this.product = product;
-        this.rating = rating;
+        this.user = user;
         this.createdAt = createdAt;
     }
 
@@ -44,12 +42,12 @@ public class Rating {
         this.id = id;
     }
 
-    public User getUser() {
-        return user;
+    public String getReview() {
+        return review;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setReview(String review) {
+        this.review = review;
     }
 
     public Product getProduct() {
@@ -60,12 +58,12 @@ public class Rating {
         this.product = product;
     }
 
-    public double getRating() {
-        return rating;
+    public User getUser() {
+        return user;
     }
 
-    public void setRating(double rating) {
-        this.rating = rating;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public LocalDateTime getCreatedAt() {

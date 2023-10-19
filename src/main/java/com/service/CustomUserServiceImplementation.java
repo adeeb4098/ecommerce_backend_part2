@@ -1,7 +1,7 @@
-package com.adeeb.service;
+package com.service;
 
-import com.adeeb.model.User;
-import com.adeeb.repository.UserRepository;
+import com.model.User;
+import com.repository.UserRepository;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

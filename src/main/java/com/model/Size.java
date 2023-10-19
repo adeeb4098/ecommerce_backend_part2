@@ -1,4 +1,4 @@
-package com.adeeb.model;
+package com.model;
 
 public class Size {
 

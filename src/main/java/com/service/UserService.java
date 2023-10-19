@@ -1,7 +1,7 @@
-package com.adeeb.service;
+package com.service;
 
-import com.adeeb.Exception.UserException;
-import com.adeeb.model.User;
+import com.Exception.UserException;
+import com.model.User;
 
 public interface UserService {
 
