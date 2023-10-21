@@ -39,10 +39,10 @@ public class AuthController {
 
     @PostMapping("/signup")
     public ResponseEntity<AuthResponse> createUserHandler(@RequestBody User user) throws UserException {
-        String email = user.getEmail();
-        String password = user.getPassword();
         String firstName = user.getFirstName();
         String lastName = user.getLastName();
+        String email = user.getEmail();
+        String password = user.getPassword();
 
         User isEmailExist = userRepository.findByEmail(email);
 
@@ -69,8 +69,8 @@ public class AuthController {
 
     }
 
-    @PostMapping("/signin ")
-    public ResponseEntity<AuthResponse> loginUserHandler(LoginRequest loginRequest) {
+    @PostMapping("/signin")
+    public ResponseEntity<AuthResponse> loginUserHandler(@RequestBody LoginRequest loginRequest) {
         String username = loginRequest.getEmail();
         String password = loginRequest.getPassword();
 
