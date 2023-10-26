@@ -1,5 +1,6 @@
 package com.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
@@ -14,6 +15,7 @@ public class Review {
 
     @ManyToOne
     @JoinColumn(name = "product_id")
+    @JsonIgnore
     private Product product;
 
     @ManyToOne
@@ -26,8 +28,9 @@ public class Review {
         // Default no-argument constructor
     }
 
-    public Review(String review, Product product, User user, LocalDateTime createdAt) {
+    public Review(Long id, String review, Product product, User user, LocalDateTime createdAt) {
         super();
+        this.id=id;
         this.review = review;
         this.product = product;
         this.user = user;

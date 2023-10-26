@@ -56,8 +56,9 @@ public class Category {
     public Category(){
     }
 
-    public Category(String name, Category parentCategory, int level) {
+    public Category(Long id, String name, Category parentCategory, int level) {
         super();
+        this.id=id;
         this.name = name;
         this.parentCategory = parentCategory;
         this.level = level;

@@ -64,6 +64,7 @@ public class Product {
     }
 
     public Product(
+            Long id,
             String title,
             String description,
             int price,
@@ -81,6 +82,7 @@ public class Product {
             LocalDateTime createdAt
     ) {
         super();
+        this.id=id;
         this.title = title;
         this.description = description;
         this.price = price;

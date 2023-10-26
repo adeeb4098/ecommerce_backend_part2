@@ -32,7 +32,7 @@ public class User {
 
     @Embedded
     @ElementCollection
-    @CollectionTable(name = "user_payment_information", joinColumns = @JoinColumn(name = "user_id"))
+    @CollectionTable(name = "payment_information", joinColumns = @JoinColumn(name = "user_id"))
     private List<PaymentInformation> paymentinformations = new ArrayList<>();
 
 
@@ -50,8 +50,9 @@ public class User {
         // Default constructor
     }
 
-    public User(String firstName, String lastName, String password, String email, String role, String mobile) {
+    public User(Long id, String firstName, String lastName, String password, String email, String role, String mobile) {
         super();
+        this.id=id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.password = password;

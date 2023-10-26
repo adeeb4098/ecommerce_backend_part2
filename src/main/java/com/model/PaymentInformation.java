@@ -8,16 +8,8 @@ import java.util.List;
 @Entity
 public class PaymentInformation {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinTable(
-            name = "user_payment_information",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "payment_information_id")
-    )
     @Column(name = "card_holder_name")
-    private List<String> cardHolderName = new ArrayList<>();
+    private String cardHolderName;
 
     @Column(name = "card_number")
     private String cardNumber;
@@ -32,7 +24,7 @@ public class PaymentInformation {
         // Default no-argument constructor
     }
 
-    public PaymentInformation(List<String> cardHolderName, String cardNumber, String expirationDate, String cvv) {
+    public PaymentInformation(String cardHolderName, String cardNumber, String expirationDate, String cvv) {
         super();
         this.cardHolderName = cardHolderName;
         this.cardNumber = cardNumber;
@@ -40,11 +32,11 @@ public class PaymentInformation {
         this.cvv = cvv;
     }
 
-    public List<String> getCardHolderName() {
+    public String getCardHolderName() {
         return cardHolderName;
     }
 
-    public void setCardHolderName(List<String> cardHolderName) {
+    public void setCardHolderName(String cardHolderName) {
         this.cardHolderName = cardHolderName;
     }
 
