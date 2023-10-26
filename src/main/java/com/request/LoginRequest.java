@@ -6,7 +6,6 @@ public class LoginRequest {
     private String password;
 
     public LoginRequest(){
-
     }
 
     public String getEmail() {
