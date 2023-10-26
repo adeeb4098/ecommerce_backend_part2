@@ -26,7 +26,6 @@ public class AuthController {
 
     private UserRepository userRepository;
     private JwtProvider jwtProvider;
-
     private PasswordEncoder passwordEncoder;
 
     private CustomUserServiceImplementation customUserService;

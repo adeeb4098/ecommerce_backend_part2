@@ -35,7 +35,6 @@ public class User {
     @CollectionTable(name = "payment_information", joinColumns = @JoinColumn(name = "user_id"))
     private List<PaymentInformation> paymentinformations = new ArrayList<>();
 
-
     @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
     @JsonIgnore
     private List<Rating> ratings=new ArrayList<>();
