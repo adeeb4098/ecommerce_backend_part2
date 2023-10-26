@@ -34,7 +34,7 @@ public class AuthController {
     public AuthController(UserRepository userRepository, CustomUserServiceImplementation customUserService, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
         this.customUserService = customUserService;
-        this.passwordEncoder = passwordEncoder;
+        this.passwordEncoder =  passwordEncoder;
     }
 
     @PostMapping("/signup")
