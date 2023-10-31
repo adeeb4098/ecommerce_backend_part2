@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
+@Embeddable
 public class PaymentInformation {
 
     @Column(name = "card_holder_name")
