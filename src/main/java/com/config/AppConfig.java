@@ -39,6 +39,7 @@ public class AppConfig {
                     }
                 })
                 .and().httpBasic().and().formLogin();
+
         return http.build();
     }
     @Bean

@@ -11,5 +11,4 @@ public class AuthResponse {
         this.message=message;
     }
 
-
 }
