@@ -7,10 +7,10 @@ import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfi
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication(exclude = SecurityAutoConfiguration.class)
+@EnableJpaRepositories
 @EntityScan(basePackages = "com.model")
 public class EcommerceBackendApplication {
 	public static void main(String[] args) {
-
 		SpringApplication.run(EcommerceBackendApplication.class, args);
 	}
 }
