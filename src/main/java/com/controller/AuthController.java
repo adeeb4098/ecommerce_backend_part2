@@ -7,6 +7,8 @@ import com.repository.UserRepository;
 import com.request.LoginRequest;
 import com.response.AuthResponse;
 import com.service.CustomUserServiceImplementation;
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -33,7 +35,7 @@ public class AuthController {
     }
 
     @PostMapping("/signup")
-    public ResponseEntity<AuthResponse> createUserHandler(@RequestBody User user) throws UserException {
+    public ResponseEntity<AuthResponse> createUserHandler(@org.jetbrains.annotations.NotNull @RequestBody User user) throws UserException {
         String firstName = user.getFirstName();
         String lastName = user.getLastName();
         String email = user.getEmail();
@@ -61,11 +63,10 @@ public class AuthController {
 
         return new ResponseEntity<AuthResponse>(authResponse, HttpStatus.CREATED);
 
-
     }
 
     @PostMapping("/signin")
-    public ResponseEntity<AuthResponse> loginUserHandler(@RequestBody LoginRequest loginRequest) {
+    public ResponseEntity<AuthResponse> loginUserHandler(@RequestBody @NotNull LoginRequest loginRequest) {
         String username = loginRequest.getEmail();
         String password = loginRequest.getPassword();
 
@@ -80,7 +81,8 @@ public class AuthController {
 
     }
 
-    private Authentication authenticate(String username, String password) {
+    @Contract("_, _ -> new")
+    private @NotNull Authentication authenticate(String username, String password) {
         UserDetails userDetails = customUserService.loadUserByUsername(username);
 
         if (userDetails == null) {
