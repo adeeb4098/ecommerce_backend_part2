@@ -36,10 +36,11 @@ public class AuthController {
 
     @PostMapping("/signup")
     public ResponseEntity<AuthResponse> createUserHandler(@org.jetbrains.annotations.NotNull @RequestBody User user) throws UserException {
-        String firstName = user.getFirstName();
-        String lastName = user.getLastName();
+
         String email = user.getEmail();
         String password = user.getPassword();
+        String firstName = user.getFirstName();
+        String lastName = user.getLastName();
 
         User isEmailExist = userRepository.findByEmail(email);
 
